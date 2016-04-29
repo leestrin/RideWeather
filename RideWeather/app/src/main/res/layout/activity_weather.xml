@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".WeatherActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0288D1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+
+            android:weightSum="1"
+            android:orientation="vertical">
+            <!-- Background color history
+
+             v1.0: #8986AB
+             v1.1: #4a86a7
+
+            -->
+
+
+            <!--
+                android:layout_above="@+id/weatherIconImageView"
+                android:layout_below="@+id/locationTextView" /> -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="@string/location"
+                    android:id="@+id/locationTextView"
+
+                    android:layout_weight="0.04" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="m/s"
+                    android:id="@+id/windMsTextView"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:textStyle="bold"
+                    android:layout_gravity="right" />
+            </RelativeLayout>
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/windDirectionImageView"
+                    android:src="@drawable/over_na"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:adjustViewBounds="true"
+                    android:maxWidth="180dp"
+                    android:maxHeight="180dp"
+                    android:layout_weight="1" />
+
+                <RelativeLayout
+                    android:layout_width="320dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="bottom"
+                    android:paddingBottom="3dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="N/A"
+                        android:id="@+id/sunRiseTextView"
+                        android:layout_alignTop="@+id/sunSetTextView"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginLeft="23dp"
+                        android:layout_marginStart="23dp"
+                        android:textColor="#FFFFFF" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="N/A"
+                        android:id="@+id/sunSetTextView"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="22dp"
+                        android:layout_marginEnd="22dp"
+                        android:textColor="#FFFFFF" />
+
+                </RelativeLayout>
+            </FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_weight="6.58"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="130dp"
+                    android:id="@+id/linearLayout"
+                    android:layout_toLeftOf="@+id/weatherIconImageView"
+                    android:layout_toStartOf="@+id/weatherIconImageView"
+                    android:weightSum="1"
+                    android:layout_alignBottom="@+id/weatherIconImageView"
+                    android:layout_alignParentTop="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/tempaerature"
+                        android:id="@+id/temperatureTextView"
+                        android:textStyle="bold"
+                        android:layout_marginTop="26dp"
+
+                        android:layout_gravity="right" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@string/condition"
+                        android:id="@+id/conditionTextView"
+
+                        android:layout_gravity="right" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="Humidity"
+                        android:id="@+id/humidityTextView"
+                        android:layout_gravity="right" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/rideHint"
+                        android:id="@+id/rideHintTextView"
+
+                        android:textColor="#FFFFFF"
+                        android:gravity="right" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="152dp"
+                    android:layout_height="152dp"
+                    android:id="@+id/weatherIconImageView"
+                    android:src="@drawable/weather_na"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="180dp"
+                    android:maxWidth="180dp"
+                    android:scaleType="fitCenter"
+                    android:layout_gravity="left"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="#3F51B5">
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="#0277BD"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/firstHour"
+                        android:id="@+id/firstHourTextView"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center"
+                        android:textColor="#C5CAE9" />
+
+                    <ImageView
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:id="@+id/firstHourWindImageView"
+                        android:src="@drawable/small_over_na"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="m/s"
+                        android:id="@+id/firstHourWindSpeedTextView"
+                        android:layout_gravity="center"
+                        android:textColor="#C5CAE9" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="Temp."
+                                android:id="@+id/firstTempFixTextView"
+                                android:textSize="10dp"
+                                android:layout_gravity="center_horizontal|right" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="N/A"
+                                android:id="@+id/firstHourTempTextView"
+                                android:layout_gravity="center|right"
+                                android:textColor="#C5CAE9" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="N/A."
+                                android:id="@+id/firstHumidFixTextView"
+                                android:textSize="10dp"
+                                android:layout_gravity="center_horizontal|right" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="N/A"
+                                android:id="@+id/firstHourHumidTextView"
+                                android:layout_gravity="right"
+                                android:textColor="#C5CAE9" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/firstHourCondImageView"
+                            android:src="@drawable/weather_na"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/secondHour"
+                        android:id="@+id/secondHourTextView"
+                        android:layout_gravity="center"
+                        android:textColor="#C5CAE9" />
+
+                    <ImageView
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:id="@+id/secondHourWindImageView"
+                        android:src="@drawable/small_over_na"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="m/s"
+                        android:id="@+id/secondHourWindSpeedTextView"
+                        android:layout_gravity="center"
+                        android:textColor="#C5CAE9" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="Temp."
+                                android:id="@+id/secondTempFixTextView"
+                                android:textSize="10dp"
+                                android:layout_gravity="center_horizontal|right" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="N/A"
+                                android:id="@+id/secondHourTempTextView"
+                                android:layout_gravity="center|right"
+                                android:textColor="#C5CAE9" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="Humid."
+                                android:id="@+id/secondHumidFixTextView"
+                                android:textSize="10dp"
+                                android:layout_gravity="center_horizontal|right" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="N/A"
+                                android:id="@+id/secondHourHumidTextView"
+                                android:layout_gravity="right"
+                                android:textColor="#C5CAE9" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/secondHourCondImageView"
+                            android:src="@drawable/weather_na"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/thirdHour"
+                        android:id="@+id/thirdHourTextView"
+                        android:layout_gravity="center"
+                        android:textColor="#C5CAE9" />
+
+                    <ImageView
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:id="@+id/thirdHourWindImageView"
+                        android:src="@drawable/small_over_na"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="m/s"
+                        android:id="@+id/thirdHourWindSpeedTextView"
+                        android:layout_gravity="center"
+                        android:textColor="#C5CAE9" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="75dp">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical|center_horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="Temp."
+                                android:id="@+id/thirdTempFixTextView"
+                                android:textSize="10dp"
+                                android:layout_gravity="center_horizontal|right" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="N/A"
+                                android:id="@+id/thirdHourTempTextView"
+                                android:layout_gravity="center|right"
+                                android:textColor="#C5CAE9" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="Humid."
+                                android:id="@+id/thirdHumidFixTextView"
+                                android:textSize="10dp"
+                                android:layout_gravity="center_horizontal|right" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:text="N/A"
+                                android:id="@+id/thirdHourHumidTextView"
+                                android:layout_gravity="right"
+                                android:textColor="#C5CAE9" />
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/thirdHourCondImageView"
+                            android:src="@drawable/weather_na"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- Below is for development test view NOT VISIBLE IN RELEASE-->
+
+
+        </LinearLayout>
+
+
+
+
+</ScrollView>
+
+

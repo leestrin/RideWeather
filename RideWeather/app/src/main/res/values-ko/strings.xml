@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">라이드 웨더</string>
+    <string name="tempaerature">온도</string>
+    <string name="sendButton_SearchCity">찾기</string>
+    <string name="location">위치</string>
+    <string name="inputCity_hint">장소 혹은 도시를 입력하세요</string>
+    <string name="condition">상태</string>
+    <string name="findingYourLocation">현재 위치 찾는중...</string>
+    <string name="rideHint">...장소 업데이트중...</string>
+    <string name="suggestEast">동쪽 으로 바람이 붑니다.</string>
+    <string name="suggestNorth">북쪽 으로 바람이 붑니다.</string>
+    <string name="suggestNorthEast">북동쪽 으로 바람이 붑니다.</string>
+    <string name="suggestNorthWest">북서쪽 으로 바람이 붑니다.</string>
+    <string name="suggestSouth">남쪽 으로 바람이 붑니다.</string>
+    <string name="suggestSouthEast">남동쪽 으로 바람이 붑니다.</string>
+    <string name="suggestSouthWest">남서쪽 으로 바람이 붑니다.</string>
+    <string name="suggestWest">서쪽 으로 바람이 붑니다.</string>
+    <string name="sunrise">"일출: "</string>
+    <string name="sunset">"일몰: "</string>
+    <string name="my_search_hint">장소를 입력하세요</string>
+    <string name="humidity">습도:</string>
+    <string name="firstHour">[3시간 후]</string>
+    <string name="secondHour">[6시간 후]</string>
+    <string name="thirdHour">[12시간 후]</string>
+    <string name="fahrenheitMode">°F 모드</string>
+    <string name="celsiusMode">°C 모드</string>
+    <string name="modeChanged">라이드 웨더를 재시작 해주세요</string>
+</resources>

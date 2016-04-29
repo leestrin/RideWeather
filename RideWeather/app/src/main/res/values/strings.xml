@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Ride Weather</string>
+
+    <string name="hello_world" translatable="false">Hello world!</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="tempaerature">Temperature</string>
+    <string name="condition">Condition</string>
+    <string name="location">Location</string>
+    <string name="inputCity_hint">Enter Your Location</string>
+    <string name="sendButton_SearchCity">Search Place</string>
+    <string name="findingYourLocation">Finding your location...</string>
+    <string name="rideHint">...Updating Location...</string>
+    <string name="suggestSouth">Wind blows to South</string>
+    <string name="suggestSouthEast">Wind blows to South East</string>
+    <string name="suggestEast">Wind blows to East</string>
+    <string name="suggestNorthEast">Wind blows to North East</string>
+    <string name="suggestNorth">Wind blows to North</string>
+    <string name="suggestNorthWest">Wind blows to North West</string>
+    <string name="suggestWest">Wind blows to West</string>
+    <string name="suggestSouthWest">Wind blows to South West</string>
+    <string name="sunrise">"Sunrise: "</string>
+    <string name="sunset">"Sunset: "</string>
+    <string name="action_search" translatable="false">search</string>
+    <string name="my_search_hint">Enter location</string>
+    <string name="humidity">Humidity:</string>
+    <string name="firstHour">[3 Hours later]</string>
+    <string name="secondHour">[6 Hours later]</string>
+    <string name="thirdHour">[12 Hours later]</string>
+    <string name="fahrenheitMode">°F mode</string>
+    <string name="celsiusMode">°C mode</string>
+    <string name="modeChanged">Please restart Ride Weather</string>
+</resources>
